@@ -3,11 +3,23 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { BootingComponent } from './booting/booting.component';
+import { InitComponent } from './init/init.component';
+import { GameComponent } from './game/game.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { SoundComponent } from './sound/sound.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ScoreboardComponent,
+    BootingComponent,
+    InitComponent,
+    GameComponent,
+    InstructionsComponent,
+    SoundComponent
   ],
   imports: [
     BrowserModule
