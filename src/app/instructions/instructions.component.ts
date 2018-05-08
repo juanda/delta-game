@@ -10,6 +10,7 @@ export class InstructionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('iniciando instructions')
   }
 
 }

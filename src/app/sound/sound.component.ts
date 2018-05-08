@@ -10,6 +10,7 @@ export class SoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('iniciando sound')
   }
 
 }

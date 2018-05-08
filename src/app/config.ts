@@ -1,14 +1,9 @@
-import { GameComponent } from "./game/game.component"
-import { Player } from "./player"
-import { Engine } from "./engine"
-
-
-var cfg = {
+export var config = {
   fpsmeter: {
     anchor: "delta",
     decimals: 0,
-    graph: true,
-    heat: true,
+    graph: 1,
+    heat: 1,
     theme: "dark",
     left: "auto",
     right: "-120px"
@@ -49,115 +44,6 @@ var cfg = {
       formats: ["mp3", "ogg"],
       volume: 0.1,
       pool: 5
-    }
-  ],
-
-  state: {
-    events: [
-      { name: "boot", from: ["none"], to: "booting" },
-      { name: "booted", from: ["booting"], to: "title" },
-      { name: "start", from: ["title"], to: "preparing" },
-      { name: "play", from: ["preparing"], to: "playing" },
-      { name: "quit", from: ["preparing", "playing"], to: "title" }
-    ]
-  },
-
-  keys: [
-    {        
-      key: GameComponent.key.SPACE,
-      mode: "up",
-      state: "title",
-      action: function() {
-        engine.start();
-      }
-    },
-    {
-      key: GameComponent.key.ESC,
-      mode: "up",
-      state: "playing",
-      action: function() {
-        engine.quit();
-      }
-    },
-    {
-      key: [GameComponent.key.UP, GameComponent.key.W],
-      mode: "down",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingUp = true;
-      }
-    },
-    {
-      key: [GameComponent.key.UP, GameComponent.key.W],
-      mode: "up",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingUp = false;
-      }
-    },
-    {
-      key: [GameComponent.key.DOWN, GameComponent.key.S],
-      mode: "down",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingDown = true;
-      }
-    },
-    {
-      key: [GameComponent.key.DOWN, GameComponent.key.S],
-      mode: "up",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingDown = false;
-      }
-    },
-    {
-      key: [GameComponent.key.LEFT, GameComponent.key.A],
-      mode: "down",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingLeft = true;
-      }
-    },
-    {
-      key: [GameComponent.key.LEFT, GameComponent.key.A],
-      mode: "up",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingLeft = false;
-      }
-    },
-    {
-      key: [GameComponent.key.RIGHT, GameComponent.key.D],
-      mode: "down",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingRight = true;
-      }
-    },
-    {
-      key: [GameComponent.key.RIGHT, GameComponent.key.D],
-      mode: "up",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.movingRight = false;
-      }
-    },
-    {
-      key: [GameComponent.key.SPACE, GameComponent.key.RETURN],
-      mode: "down",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.firing = true;
-      }
-    },
-    {
-      key: [GameComponent.key.SPACE, GameComponent.key.RETURN],
-      mode: "up",
-      state: ["preparing", "playing"],
-      action: function() {
-        player.firing = false;
-      }
     }
   ],
 

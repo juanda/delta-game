@@ -10,6 +10,7 @@ export class BootingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('iniciando booting')
   }
 
 }
